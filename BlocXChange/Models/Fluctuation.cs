@@ -10,13 +10,19 @@ namespace BlocXChange.Models
     public class Fluctuation
     {
         [Key]
-        public int FlucNo { get; set; }
+        public int DataNo { get; set; }
 
         /// <summary>
         /// 주가를 변동시켜야 할 시간의 Ticks값
         /// </summary>
         [Required]
         public long FlucTimeTicks { get; set; }
+
+        /// <summary>
+        /// 주가 변동이 일어날 회사
+        /// </summary>
+        [Required]
+        public int CompanyNo { get; set; }
 
         /// <summary>
         /// 주가 변동폭

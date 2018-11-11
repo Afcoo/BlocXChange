@@ -9,13 +9,13 @@ namespace BlocXChange.Models
     public class Game
     {
         [Key]
-        public int GameNO { get; set; }
-
-        /// <summary>
-        /// 게임을 생성할 때 정할 수 있는 이름
-        /// </summary>
+        public int GameNo { get; set; }
+        
         [Required]
         public string GameID { get; set; }
+
+        [Required]
+        public string GamePassword { get; set; }
 
         /// <summary>
         /// 게임을 생성할 때 자동으로 생성되는 고유 코드

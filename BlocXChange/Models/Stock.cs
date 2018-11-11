@@ -10,7 +10,7 @@ namespace BlocXChange.Models
     public class Stock
     {
         [Key]
-        public int StockNo { get; set; }
+        public int DataNo { get; set; }
 
         /// <summary>
         /// 게임 내에서 등장하는 회사의 고유 번호

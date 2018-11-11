@@ -13,6 +13,7 @@ namespace BlocXChange.DataContext
         public DbSet<Stock> Stocks { get; set; }
         public DbSet<Fluctuation> Fluctuations { get; set; }
         public DbSet<Exchange> Exchanges { get; set; }
+        
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

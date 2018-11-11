@@ -10,5 +10,8 @@ namespace BlocXChange.ViewModels
     {
         [Required(ErrorMessage = "사용자 ID를 입력하세요")]
         public string GameID { get; set; }
+
+        [Required(ErrorMessage = "사용자 비밀번호를 입력하세요")]
+        public string GamePassword { get; set; }
     }
 }

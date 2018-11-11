@@ -4,14 +4,16 @@ using BlocXChange.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlocXChange.Migrations
 {
     [DbContext(typeof(BlocXChangeDBContext))]
-    partial class BlocXChangeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20181026112757_3")]
+    partial class _3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,7 +23,7 @@ namespace BlocXChange.Migrations
 
             modelBuilder.Entity("BlocXChange.Models.Exchange", b =>
                 {
-                    b.Property<int>("DataNo")
+                    b.Property<int>("ExchangeDataNo")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -33,7 +35,7 @@ namespace BlocXChange.Migrations
 
                     b.Property<int>("Value");
 
-                    b.HasKey("DataNo");
+                    b.HasKey("ExchangeDataNo");
 
                     b.HasIndex("GameNo");
 
@@ -42,11 +44,9 @@ namespace BlocXChange.Migrations
 
             modelBuilder.Entity("BlocXChange.Models.Fluctuation", b =>
                 {
-                    b.Property<int>("DataNo")
+                    b.Property<int>("FlucNo")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompanyNo");
 
                     b.Property<long>("FlucTimeTicks");
 
@@ -54,7 +54,7 @@ namespace BlocXChange.Migrations
 
                     b.Property<int>("GameNo");
 
-                    b.HasKey("DataNo");
+                    b.HasKey("FlucNo");
 
                     b.HasIndex("GameNo");
 
@@ -63,7 +63,7 @@ namespace BlocXChange.Migrations
 
             modelBuilder.Entity("BlocXChange.Models.Game", b =>
                 {
-                    b.Property<int>("GameNo")
+                    b.Property<int>("GameNO")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -80,14 +80,14 @@ namespace BlocXChange.Migrations
 
                     b.Property<long>("SuspendedTicks");
 
-                    b.HasKey("GameNo");
+                    b.HasKey("GameNO");
 
                     b.ToTable("Games");
                 });
 
             modelBuilder.Entity("BlocXChange.Models.Stock", b =>
                 {
-                    b.Property<int>("DataNo")
+                    b.Property<int>("StockNo")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -97,7 +97,7 @@ namespace BlocXChange.Migrations
 
                     b.Property<int>("StockValue");
 
-                    b.HasKey("DataNo");
+                    b.HasKey("StockNo");
 
                     b.HasIndex("GameNo");
 

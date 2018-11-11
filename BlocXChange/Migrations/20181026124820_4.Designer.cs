@@ -4,14 +4,16 @@ using BlocXChange.DataContext;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace BlocXChange.Migrations
 {
     [DbContext(typeof(BlocXChangeDBContext))]
-    partial class BlocXChangeDBContextModelSnapshot : ModelSnapshot
+    [Migration("20181026124820_4")]
+    partial class _4
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -45,8 +47,6 @@ namespace BlocXChange.Migrations
                     b.Property<int>("DataNo")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("CompanyNo");
 
                     b.Property<long>("FlucTimeTicks");
 
